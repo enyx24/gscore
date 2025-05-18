@@ -58,7 +58,7 @@ class ImportScores extends Command
                     'uid' => $uid,
                     'subject' => $subject,
                     'score' => $score,
-                    'foreign_language_id' => $foreign_language_id,
+                    'foreign_language_id' => ($subject === 'ngoai_ngu') ? $foreign_language_id : null,
                 ];
             }
             unset($data);
