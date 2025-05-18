@@ -22,11 +22,12 @@ class ScoreController extends Controller
             ], 400);
         
         // QUERY
-        $score = Score::where('id', $reg)->get();
-        if ($score->isEmpty())
+        $scores = Score::where('uid', $reg)->get();
+        if ($scores->isEmpty())
             return response()->json([
-                'error' => 'ID not found'
+                'error' => 'ID not found',
+                'debug' => "Received ID: $reg",
             ], 404);
-        return response()->json($score);
+        return response()->json($scores);
     }
 }
