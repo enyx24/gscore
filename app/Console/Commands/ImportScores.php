@@ -26,6 +26,7 @@ class ImportScores extends Command
      */
     public function handle()
     {
+        ini_set('memory_limit', '512M');
         $file = $this->argument('file');
         $batch_size = (int) $this->option('batch');
         if (!file_exists($file)) {
@@ -60,12 +61,13 @@ class ImportScores extends Command
                     'foreign_language_id' => $foreign_language_id,
                 ];
             }
-
+            unset($data);
             if (count($batch) >= $batch_size) {
                 $count += count($batch);
                 Score::insert($batch);
                 $this->info("$count lines added");
                 $batch = [];
+                gc_collect_cycles();
             }
         }
         if (count($batch) > 0) {

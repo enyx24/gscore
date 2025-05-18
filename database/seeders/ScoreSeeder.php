@@ -13,6 +13,8 @@ class ScoreSeeder extends Seeder
      */
     public function run(): void
     {
-        Artisan::call('app:import-scores');
+        echo "Running app:import-scores\n";
+        $exit_code = Artisan::call('app:import-scores');
+        echo "Import command finished with code $exit_code\n";
     }
 }
