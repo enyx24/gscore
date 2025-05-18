@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Score extends Model
 {
-    protected $table = 'diem';
+    protected $table = 'scores';
     public $incrementing = false;
     public $timestamps = false;
 
@@ -14,9 +14,9 @@ class Score extends Model
     protected $keyType = 'string';
 
     protected $fillable = [
-        'sbd',
-        'mon',
-        'diem',
-        'ma_ngoai_ngu',
+        'uid',
+        'subject',
+        'score',
+        'foreign_language_id',
     ];
 }
