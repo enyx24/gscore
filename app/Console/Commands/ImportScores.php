@@ -63,15 +63,15 @@ class ImportScores extends Command
 
             if (count($batch) >= $batch_size) {
                 $count += count($batch);
-                $this->info("$count lines added");
                 Score::insert($batch);
+                $this->info("$count lines added");
                 $batch = [];
             }
         }
         if (count($batch) > 0) {
             $count += count($batch);
-            $this->info("$count lines added");
             Score::insert($batch);
+            $this->info("$count lines added");
             $batch = [];
         }
     }
