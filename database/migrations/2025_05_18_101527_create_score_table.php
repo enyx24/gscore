@@ -16,6 +16,8 @@ return new class extends Migration
             $table->string('subject');
             $table->float('score');
             $table->string('foreign_language_id')->nullable();
+            // speed issues
+            $table->primary(['uid', 'subject']); 
         });
     }
 
