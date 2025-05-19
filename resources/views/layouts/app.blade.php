@@ -7,10 +7,9 @@
   @vite('resources/css/app.css')
   @vite('resources/js/app.js')
 </head>
-<body class="flex min-h-screen bg-gray-100 text-gray-900">
+<body class="flex flex-col md:flex-row min-h-screen bg-gray-100 text-gray-900">
 
-  {{-- Sidebar --}}
-  <aside class="w-64 bg-white shadow-lg p-6 space-y-4">
+  <aside id="sidebar" class="hidden md:block w-64 bg-white shadow-lg p-6 space-y-4 md:min-h-screen">
     <h2 class="text-2xl font-bold">GScore</h2>
     <nav class="space-y-2">
       <a href="/" class="block px-2 py-1 rounded hover:bg-gray-200">Dashboard</a>
@@ -20,10 +19,20 @@
     </nav>
   </aside>
 
-  {{-- Nội dung --}}
-  <main class="flex-1 p-8">
+  <main class="flex-1 p-4">
+    <button onclick="toggleSidebar()" class="md:hidden mb-4 bg-blue-500 text-white px-4 py-2 rounded">
+      ☰ Menu
+    </button>
+
     @yield('content')
   </main>
+
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      sidebar.classList.toggle('hidden');
+    }
+  </script>
 
 </body>
 </html>
