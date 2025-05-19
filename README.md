@@ -6,6 +6,8 @@ This is an assignment for my internship.
 ### Installation
 - Clone this project:<br>
 `git clone https://github.com/enyx24/gscore`
+- Change dir into repo:<br>
+`cd gscore`
 - Run docker compose:<br>
 `docker compose up`<br>
 Including docker compose, composer install, npm install, build, run server, database migrate - seed. Details: [docker-compose](https://github.com/enyx24/gscore/blob/master/docker-compose.yml) [init.sh](https://github.com/enyx24/gscore/blob/master/init.sh)<br>
