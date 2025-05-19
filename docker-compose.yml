@@ -30,6 +30,8 @@ services:
       - ./:/app
     networks:
       - laravel-network
+    command: [ "bash", "/app/init.sh" ]
+      
 
 volumes:
   mariadb_data:
