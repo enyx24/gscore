@@ -1,5 +1,4 @@
 # GScore
-This is an assignment for my internship.
 ### Requirement
 - Docker
 - Git
